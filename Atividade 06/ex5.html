@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparação de Populações</title>
+</head>
+<body>
+
+<script>
+function calcularAnosParaIgualdade() {
+    var populacaoA = parseInt(prompt("Digite a população inicial do país A:"));
+    var taxaCrescimentoA = parseFloat(prompt("Digite a taxa de crescimento anual do país A (em decimal):"));
+    var populacaoB = parseInt(prompt("Digite a população inicial do país B:"));
+    var taxaCrescimentoB = parseFloat(prompt("Digite a taxa de crescimento anual do país B (em decimal):"));
+    var anos = 0;
+
+    while (isNaN(populacaoA) || populacaoA <= 0 || isNaN(taxaCrescimentoA) || taxaCrescimentoA <= 0 || isNaN(populacaoB) || populacaoB <= 0 || isNaN(taxaCrescimentoB) || taxaCrescimentoB <= 0) {
+        alert("Erro: As populações e as taxas de crescimento devem ser números positivos.");
+        populacaoA = parseInt(prompt("Digite a população inicial do país A:"));
+        taxaCrescimentoA = parseFloat(prompt("Digite a taxa de crescimento anual do país A (em decimal):"));
+        populacaoB = parseInt(prompt("Digite a população inicial do país B:"));
+        taxaCrescimentoB = parseFloat(prompt("Digite a taxa de crescimento anual do país B (em decimal):"));
+    }
+
+    while (populacaoA < populacaoB) {
+        populacaoA *= (1 + taxaCrescimentoA);
+        populacaoB *= (1 + taxaCrescimentoB);
+        anos++;
+    }
+
+    alert("Levará " + anos + " anos para que a população do país A ultrapasse ou iguale a população do país B.");
+
+    var repetir = confirm("Deseja calcular novamente?");
+    if (repetir) {
+        calcularAnosParaIgualdade();
+    }
+}
+</script>
+
+<button onclick="calcularAnosParaIgualdade()">Calcular Anos para Igualdade</button>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Tabuada</title>
+</head>
+<body>
+
+<script>
+function gerarTabuada() {
+    var numero = parseInt(prompt("Digite um número inteiro entre 1 e 10 para gerar a tabuada:"));
+
+    // Validação da entrada do usuário
+    while (isNaN(numero) || numero < 1 || numero > 10) {
+        alert("Erro: Por favor, digite um número inteiro entre 1 e 10.");
+        numero = parseInt(prompt("Digite um número inteiro entre 1 e 10 para gerar a tabuada:"));
+    }
+
+    var tabuada = "";
+    for (var i = 1; i <= 10; i++) {
+        tabuada += numero + " X " + i + " = " + (numero * i) + "<br>";
+    }
+
+    document.getElementById("resultadoTabuada").innerHTML = "<h2>Tabuada de " + numero + ":</h2>" + tabuada;
+}
+</script>
+
+<button onclick="gerarTabuada()">Gerar Tabuada</button>
+
+<div id="resultadoTabuada"></div>
+
+</body>
+</html>

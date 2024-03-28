@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Números no Intervalo com Soma</title>
+</head>
+<body>
+
+<script>
+function gerarNumerosNoIntervaloComSoma() {
+    var numero1 = parseInt(prompt("Digite o primeiro número inteiro:"));
+    var numero2 = parseInt(prompt("Digite o segundo número inteiro:"));
+    var numerosNoIntervalo = "";
+    var soma = 0;
+
+    if (numero1 <= numero2) {
+        for (var i = numero1; i <= numero2; i++) {
+            numerosNoIntervalo += i + " ";
+            soma += i;
+        }
+    } else {
+        for (var i = numero2; i <= numero1; i++) {
+            numerosNoIntervalo += i + " ";
+            soma += i;
+        }
+    }
+
+    alert("Números no intervalo: " + numerosNoIntervalo + "\nSoma dos números: " + soma);
+}
+</script>
+
+<button onclick="gerarNumerosNoIntervaloComSoma()">Gerar Números no Intervalo com Soma</button>
+
+</body>
+</html>
