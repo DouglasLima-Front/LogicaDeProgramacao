@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validação de Usuário e Senha</title>
+</head>
+<body>
+
+<script>
+function validarUsuarioSenha() {
+    var usuario = prompt("Digite seu nome de usuário:");
+    var senha = prompt("Digite sua senha:");
+
+    while (senha === usuario) {
+        alert("Erro: A senha não pode ser igual ao nome de usuário. Por favor, tente novamente.");
+        usuario = prompt("Digite seu nome de usuário:");
+        senha = prompt("Digite sua senha:");
+    }
+
+    alert("Usuário e senha válidos.");
+}
+</script>
+
+<button onclick="validarUsuarioSenha()">Validar Usuário e Senha</button>
+
+</body>
+</html>
