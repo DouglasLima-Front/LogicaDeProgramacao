@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Fatorial (Limitada)</title>
+</head>
+<body>
+
+<script>
+function calcularFatorialLimitado() {
+    var numero = parseInt(prompt("Digite um número inteiro positivo e menor que 16 para calcular o fatorial:"));
+
+    while (numero < 0 || numero >= 16 || isNaN(numero)) {
+        alert("Por favor, digite um número inteiro positivo e menor que 16.");
+        numero = parseInt(prompt("Digite um número inteiro positivo e menor que 16 para calcular o fatorial:"));
+    }
+
+    var fatorial = 1;
+
+    for (var i = 2; i <= numero; i++) {
+        fatorial *= i;
+    }
+
+    alert("O fatorial de " + numero + " é: " + fatorial);
+}
+</script>
+
+<button onclick="calcularFatorialLimitado()">Calcular Fatorial (Limitado)</button>
+
+</body>
+</html>

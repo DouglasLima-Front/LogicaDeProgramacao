@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Média de Notas</title>
+</head>
+<body>
+
+<script>
+function calcularMediaNotas() {
+    var quantidadeNotas = parseInt(prompt("Digite a quantidade de notas:"));
+    var soma = 0;
+
+    for (var i = 0; i < quantidadeNotas; i++) {
+        var nota = parseFloat(prompt("Digite a nota " + (i + 1) + ":"));
+        
+        while (isNaN(nota) || nota < 0 || nota > 10) {
+            alert("Por favor, digite uma nota válida entre 0 e 10.");
+            nota = parseFloat(prompt("Digite a nota " + (i + 1) + ":"));
+        }
+
+        soma += nota;
+    }
+
+    var media = soma / quantidadeNotas;
+    alert("A média das " + quantidadeNotas + " notas é: " + media.toFixed(2));
+}
+</script>
+
+<button onclick="calcularMediaNotas()">Calcular Média de Notas</button>
+
+</body>
+</html>
+

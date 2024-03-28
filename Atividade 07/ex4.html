@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menor, Maior e Soma</title>
+</head>
+<body>
+
+<script>
+function calcularMenorMaiorSoma() {
+    var quantidadeNumeros = parseInt(prompt("Digite a quantidade de números:"));
+    var numeros = [];
+    var soma = 0;
+
+    for (var i = 0; i < quantidadeNumeros; i++) {
+        var numero = parseInt(prompt("Digite o número " + (i + 1) + ":"));
+        numeros.push(numero);
+        soma += numero;
+    }
+
+    numeros.sort(function(a, b){return a - b});
+    var menor = numeros[0];
+    var maior = numeros[numeros.length - 1];
+
+    alert("Menor valor: " + menor + "\nMaior valor: " + maior + "\nSoma dos valores: " + soma);
+}
+</script>
+
+<button onclick="calcularMenorMaiorSoma()">Calcular Menor, Maior e Soma</button>
+
+</body>
+</html>

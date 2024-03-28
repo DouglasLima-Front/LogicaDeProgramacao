@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Números Primos até N</title>
+</head>
+<body>
+
+<script>
+function encontrarPrimos() {
+    var n = parseInt(prompt("Digite um número inteiro para encontrar todos os números primos até ele:"));
+    var primos = [];
+    var divisoes = 0;
+
+    for (var i = 2; i <= n; i++) {
+        var ehPrimo = true;
+
+        for (var j = 2; j <= Math.sqrt(i); j++) {
+            divisoes++;
+            if (i % j === 0) {
+                ehPrimo = false;
+                break;
+            }
+        }
+
+        if (ehPrimo) {
+            primos.push(i);
+        }
+    }
+
+    alert("Números primos até " + n + ": " + primos.join(", ") + "\nNúmero de divisões realizadas: " + divisoes);
+}
+</script>
+
+<button onclick="encontrarPrimos()">Encontrar Números Primos</button>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Série de Fibonacci</title>
+</head>
+<body>
+
+<script>
+function gerarFibonacci(n) {
+    var fibonacci = [1, 1];
+    
+    for (var i = 2; i < n; i++) {
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    }
+    
+    return fibonacci;
+}
+
+function mostrarFibonacci() {
+    var n = parseInt(prompt("Digite o valor de n para gerar a série de Fibonacci até o n-ésimo termo:"));
+    
+    var resultado = gerarFibonacci(n);
+    
+    alert("Série de Fibonacci até o " + n + "º termo:\n" + resultado.join(", "));
+}
+</script>
+
+<button onclick="mostrarFibonacci()">Mostrar Fibonacci</button>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Potência</title>
+</head>
+<body>
+
+<script>
+function calcularPotencia() {
+    var base = parseFloat(prompt("Digite a base:"));
+    var expoente = parseInt(prompt("Digite o expoente:"));
+    var resultado = 1;
+
+    for (var i = 0; i < expoente; i++) {
+        resultado *= base;
+    }
+
+    alert("O resultado de " + base + " elevado a " + expoente + " é: " + resultado);
+}
+</script>
+
+<button onclick="calcularPotencia()">Calcular Potência</button>
+
+</body>
+</html>
