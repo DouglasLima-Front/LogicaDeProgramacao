@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sequência de Tribonacci</title>
+<script>
+  const memo = {0: 0, 1: 1, 2: 1};
+
+  function tribonacci(n) {
+    if (memo[n] !== undefined) {
+      return memo[n];
+    }
+    memo[n] = tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
+    return memo[n];
+  }
+
+  function calcularTribonacci() {
+    const n = parseInt(document.getElementById('n').value);
+    if (isNaN(n) || n < 0) {
+      alert("Por favor, insira um número inteiro não negativo.");
+      return;
+    }
+    const resultado = tribonacci(n);
+    document.getElementById('resultado').innerText = `O ${n}º número da sequência de Tribonacci é: ${resultado}`;
+  }
+</script>
+</head>
+<body>
+  <h1>Calcular N-ésimo Número da Sequência de Tribonacci</h1>
+  <input type="number" id="n" min="0" placeholder="Insira um número inteiro não negativo">
+  <button onclick="calcularTribonacci()">Calcular</button>
+  <div id="resultado"></div>
+</body>
+</html>

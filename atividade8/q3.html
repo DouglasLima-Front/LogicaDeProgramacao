@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Potência Recursiva</title>
+<script>
+  function potenciaRecursiva(x, k) {
+    if (k === 0) {
+      // Qualquer número elevado a 0 é 1 (por definição)
+      return 1;
+    } else if (k < 0) {
+      // Caso o expoente seja negativo, x^k = 1 / (x^(-k))
+      return 1 / potenciaRecursiva(x, -k);
+    } else {
+      // Caso recursivo: multiplica x por x^(k-1)
+      return x * potenciaRecursiva(x, k - 1);
+    }
+  }
+
+  function calcularPotencia() {
+    var base = parseInt(document.getElementById('base').value);
+    var expoente = parseInt(document.getElementById('expoente').value);
+    var resultado = potenciaRecursiva(base, expoente);
+    document.getElementById('resultado').innerText = 'Resultado: ' + resultado;
+  }
+</script>
+</head>
+<body>
+  <h1>Calcular Potência Recursiva de x^k</h1>
+  <input type="number" id="base" placeholder="Digite a base x">
+  <input type="number" id="expoente" placeholder="Digite o expoente k">
+  <button onclick="calcularPotencia()">Calcular</button>
+  <div id="resultado"></div>
+</body>
+</html>

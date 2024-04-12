@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soma Harmônica</title>
+<script>
+  function somaHarmonica(N) {
+    if (N === 1) {
+      return 1; 
+    } else {
+      return 1 / N + somaHarmonica(N - 1); 
+    }
+  }
+
+  function calcularSomaHarmonica() {
+    var numero = parseInt(document.getElementById('numero').value);
+    if (isNaN(numero) || numero < 1) {
+      alert("Por favor, insira um número inteiro positivo.");
+    } else {
+      var resultado = somaHarmonica(numero);
+      document.getElementById('resultado').innerText = 'Resultado: ' + resultado.toFixed(4);
+    }
+  }
+</script>
+</head>
+<body>
+  <h1>Calcular Soma Harmônica até N</h1>
+  <input type="number" id="numero" min="1" placeholder="Insira um número positivo">
+  <button onclick="calcularSomaHarmonica()">Calcular</button>
+  <div id="resultado"></div>
+</body>
+</html>

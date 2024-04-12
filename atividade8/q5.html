@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Números de Pell</title>
+<script>
+  function pell(n) {
+    if (n === 0) {
+      return 0;
+    } else if (n === 1) {
+      return 1;
+    } else {
+      return 2 * pell(n - 1) + pell(n - 2);
+    }
+  }
+
+  function calcularPell() {
+    const n = parseInt(document.getElementById('n').value);
+    if (isNaN(n) || n < 0) {
+      alert("Por favor, insira um número inteiro não negativo.");
+      return;
+    }
+    const resultado = pell(n);
+    document.getElementById('resultado').innerText = `O ${n}º número de Pell é: ${resultado}`;
+  }
+</script>
+</head>
+<body>
+  <h1>Calcular N-ésimo Número de Pell</h1>
+  <input type="number" id="n" min="0" placeholder="Insira um número inteiro não negativo">
+  <button onclick="calcularPell()">Calcular</button>
+  <div id="resultado"></div>
+</body>
+</html>

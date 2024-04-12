@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soma Recursiva</title>
+<script>
+  function somaRecursiva(N) {
+    if (N <= 0) {
+      return 0;
+    } else {
+      return N + somaRecursiva(N - 1);
+    }
+  }
+
+  function calcularSoma() {
+    var numero = parseInt(document.getElementById('numero').value);
+    var resultado = somaRecursiva(numero);
+    document.getElementById('resultado').innerText = 'Resultado: ' + resultado;
+  }
+</script>
+</head>
+<body>
+  <h1>Calcular soma recursiva de 1 até N</h1>
+  <input type="number" id="numero" min="1" placeholder="Insira um número">
+  <button onclick="calcularSoma()">Calcular</button>
+  <div id="resultado"></div>
+</body>
+</html>
