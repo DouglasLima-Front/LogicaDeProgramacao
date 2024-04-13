@@ -1,0 +1,61 @@
+Essa parte é a interfacezinha onde o usuário pode adicionar um aluno;
+
+<div>
+    <label for="id">ID:</label>
+    <input type="text" id="id">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome">
+    <label for="nota">Nota:</label>
+    <input type="number" id="nota">
+    <button onclick="adicionarAluno()">Adicionar Aluno</button>
+</div>
+
+ Aqui, se o usuário quiser procurar um aluno pelo ID, ele pode; 
+
+<div>
+    <label for="buscarId">Buscar Aluno por ID:</label>
+    <input type="text" id="buscarId">
+    <button onclick="buscarAluno()">Buscar</button>
+</div>
+
+Essa parte mostra a média das notas dos alunos;
+<div>
+    <p>Média das Notas: <span id="mediaNotas">-</span></p>
+</div>
+
+O JavaScript cuida das operações
+<script>
+Aqui, usamos um array para armazenar os alunos
+    let alunos = [];
+
+Função para adicionar um aluno ao array
+    function adicionarAluno() {
+       Pegamos o ID, nome e nota inseridos pelo usuário
+       Criamos um objeto aluno com esses dados
+       Adicionamos esse aluno ao array de alunos
+       Recalculamos a média das notas e exibimos
+    }
+
+  Função para buscar um aluno pelo ID no array
+    function buscarAluno() {
+      Pegamos o ID inserido pelo usuário
+       Procuramos esse ID no array de alunos
+       Se encontrarmos, exibimos os detalhes do aluno
+       Se não, informamos que o aluno não foi encontrado
+    }
+
+ Função para calcular a média das notas dos alunos
+    function calcularMediaNotas() {
+ Se o array de alunos estiver vazio, exibimos '-' na média
+       Caso contrário, somamos todas as notas dos alunos
+
+No caso do segundo, 
+Nesta abordagem, optei por utilizar um dicionário (objeto) para armazenar os alunos. Cada aluno é representado por um par de chave-valor, onde a chave é o ID do aluno e o valor é outro objeto contendo o nome e a nota do aluno.
+
+A interface permaneceu semelhante à anterior, permitindo que eu adicionasse, buscasse e visse a média das notas dos alunos.
+
+No entanto, as operações de adicionar e buscar alunos agora envolvem a manipulação do objeto de alunos. Para adicionar um aluno, eu utilizei o ID fornecido como chave para o objeto e inseri um objeto de aluno contendo nome e nota como valor associado. Ao buscar um aluno, eu simplesmente procurei pelo ID no objeto e, se encontrado, exibi os detalhes desse aluno.
+        // Dividimos essa soma pelo número de alunos
+        // Exibimos a média das notas
+    }
+</script>
